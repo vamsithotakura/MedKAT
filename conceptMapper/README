@@ -1,0 +1,19 @@
+INTRODUCTION
+------------
+ConceptMapper is a highly configurable, high performance dictionary lookup tool, implemented as a UIMA (Unstructured Information Management Architecture) component. Using one of several matching algorithms, it maps entries in a dictionary onto input documents, producing UIMA annotations.
+
+ConceptMapper was designed to provide highly accurate mappings of text into controlled vocabularies, specified as dictionaries, including the association of any necessary properties from the controlled vocabulary as part of that mapping. Individual dictionary entries could contain multiple terms (tokens), and ConceptMapper can be configured to allow multi-term entries to be matched against non-contiguous text. It was also designed to perform fast, and has been easily able to provide real-time results even with multi-million entry dictionaries.
+
+
+ORGANIZATION
+------------
+The ConceptMapper distribution contains src and resources directories. Within resources/ is dict/testDict.xml, a sample dictionary. The dictionaries actually used in MedKAT/p are supplied within the MedKATp/resources directory structure.
+
+The ConceptMapper src directory tree contains the ConceptMapper src, both for loading dictionary resources and UIMA-based processing of input documents.
+
+Complete documentation of ConceptMapper can be found in the MedKATp_UserGuide, which is provided in both HTML and PDF format, in the MedKATp/doc directory.
+
+
+DEPENDANCIES
+------------
+ConceptMapper requires Apache UIMA 2.2 or later. See http://incubator.apache.org/uima/ for more information about UIMA.
