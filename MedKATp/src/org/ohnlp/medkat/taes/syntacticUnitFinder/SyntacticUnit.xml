@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>SyntacticUnit</name>
+    <description></description>
+    <version>1.0</version>
+    <vendor>IBM</vendor>
+    <types>
+        <typeDescription>
+            <name>org.ohnlp.medkat.taes.syntacticUnitFinder.SyntacticUnit</name>
+            <description></description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>scope</name>
+                    <description></description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+            </features>
+        </typeDescription>
+    </types>
+</typeSystemDescription>

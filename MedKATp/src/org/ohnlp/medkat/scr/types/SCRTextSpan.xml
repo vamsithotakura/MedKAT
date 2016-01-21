@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRTextSpan</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRTextSpan</name>
+      <description>text span object</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

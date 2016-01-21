@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+<primitive>true</primitive>
+<annotatorImplementationName>org.ohnlp.medkat.taes.negationDetector.NegationDetector</annotatorImplementationName>
+<analysisEngineMetaData>
+<name>negator</name>
+<description>Using negation terms (as specified by "NoTerm" annotations) in conjunction with noun-phrase chunking information, find negated tokens and mark them as such. Initially, tokens are considered following the negation term, and if none are found, then prior to the negation term.</description>
+<version></version>
+<vendor></vendor>
+<configurationParameters>
+<configurationParameter>
+<name>SemanticClassesToApplyNegation</name>
+<type>String</type>
+<multiValued>true</multiValued>
+<mandatory>false</mandatory>
+</configurationParameter>
+<configurationParameter>
+<name>NoTermType</name>
+<type>String</type>
+<multiValued>false</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+<configurationParameter>
+<name>NoTermEnclosingSpanFeature</name>
+<type>String</type>
+<multiValued>false</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+</configurationParameters>
+<configurationParameterSettings>
+<nameValuePair>
+<name>SemanticClassesToApplyNegation</name>
+<value>
+<array>
+<string>Diagnosis</string>
+<string>Metastatic</string>
+<string>Invasion</string>
+<string>Lymph</string>
+<string>Site</string>
+<string>RadLex</string>
+</array>
+</value>
+</nameValuePair>
+<nameValuePair>
+<name>NoTermType</name>
+<value>
+<string>org.ohnlp.medkat.taes.conceptMapper.NoTerm</string>
+</value>
+</nameValuePair>
+<nameValuePair>
+<name>NoTermEnclosingSpanFeature</name>
+<value>
+<string>enclosingSpan</string>
+</value>
+</nameValuePair>
+</configurationParameterSettings>
+<typeSystemDescription>
+<imports>
+<import name="org.ohnlp.medkat.taes.conceptMapper.DictTerm"/>
+<import name="org.ohnlp.medkat.taes.conceptMapper.NoTerm"/>
+<import name="org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation"/>
+</imports>
+</typeSystemDescription>
+<typePriorities>
+<priorityList>
+<type>org.ohnlp.medkat.taes.conceptMapper.NoTerm</type>
+</priorityList>
+</typePriorities>
+<fsIndexCollection/>
+<capabilities>
+<capability>
+<inputs>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.conceptMapper.NoTerm</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.conceptMapper.DictTerm</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation</type>
+</inputs>
+<outputs/>
+<languagesSupported/>
+</capability>
+</capabilities>
+<operationalProperties>
+<modifiesCas>true</modifiesCas>
+<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+</operationalProperties>
+</analysisEngineMetaData>
+<resourceManagerConfiguration/>
+</taeDescription>

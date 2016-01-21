@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRDisease</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRDisease</name>
+      <description>primary tumor object</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>TumorSpecimens</name>
+          <description>collection of tumor spesimen objects</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>LymphNodes</name>
+          <description>collection of lymph nodes objects</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Stages</name>
+          <description>collection of stage objects</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>GrossDescription</name>
+          <description>gross description object</description>
+          <rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

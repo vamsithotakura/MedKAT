@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>DiagnosisBaseSubSubsectionAnnotation</name>
+  <description>Used as base class for annotations that are to be processed within a diagnosis annotation's subsections. In other words, if a diagnosis has been written in the style where each specific element is broken out by subsubsection (e.g., "Histologic Grade:", "Lymph Nodes:"), those subsubsection annotations should inherit from this base class.</description>
+  <version>1.0</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.taes.subSubsectionDetector.SubSubsection"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.taes.subSubsectionDetector.DiagnosisBaseSubSubsectionAnnotation</name>
+      <description/>
+      <supertypeName>org.ohnlp.medkat.taes.subSubsectionDetector.SubSubsection</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

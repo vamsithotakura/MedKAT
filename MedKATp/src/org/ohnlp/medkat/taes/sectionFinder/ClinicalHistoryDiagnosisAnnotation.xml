@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>ClinicalHistoryDiagnosisAnnotation</name>
+  <description/>
+  <version>1.0</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.taes.sectionFinder.TextSectionAnnotation"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.taes.sectionFinder.ClinicalHistoryDiagnosisAnnotation</name>
+      <description/>
+      <supertypeName>org.ohnlp.medkat.taes.sectionFinder.TextSectionAnnotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

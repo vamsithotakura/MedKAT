@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRGrossDescriptionPart</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRGrossDescriptionPart</name>
+      <description>grade value object</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>Size</name>
+          <description>size of gross description</description>
+          <rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Sites</name>
+          <description>releated sites</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Enclosing</name>
+          <description/>
+          <rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

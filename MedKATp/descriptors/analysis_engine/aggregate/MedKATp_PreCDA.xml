@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>
+  <annotatorImplementationName/>
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="MedKATTokenizer">
+      <import location="../../../../MedKAT_NLP/descriptors/analysis_engine/primitive/MedKATTokenizer.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="SentenceBreakDetector2">
+      <import location="../primitive/SentenceBreakDetector.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="SyntacticUnitFinder">
+      <import location="../primitive/SyntacticUnitFinder.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="SentenceShortener">
+      <import location="../primitive/SentenceShortener.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ParenSentenceCombiner">
+      <import location="../primitive/ParenSentenceCombiner.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="SubSubsectionDetector">
+      <import location="../primitive/SubSubsectionDetector.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NewLineSentenceAnnotator">
+      <import location="../primitive/NewLineSentenceAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="SubsectionDetector">
+      <import location="../primitive/SubsectionDetector.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TextDocParser">
+      <import location="../primitive/TextDocParser.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="MedKATSentenceDetector">
+      <import location="../../../../MedKAT_NLP/descriptors/analysis_engine/primitive/MedKATSentenceDetector.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="section">
+      <import location="../primitive/MayoCPSectionFinder.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>MedKATp_PreCDA</name>
+    <description>This aggregate is used to read in Mayo-format pathology reports, annotate the sections and export as a CDA file.</description>
+    <version/>
+    <vendor/>
+    <configurationParameters searchStrategy="language_fallback"/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>MedKATSentenceDetector</node>
+        <node>MedKATTokenizer</node>
+        <node>SentenceShortener</node>
+        <node>section</node>
+        <node>SubsectionDetector</node>
+        <node>SubSubsectionDetector</node>
+        <node>SyntacticUnitFinder</node>
+        <node>NewLineSentenceAnnotator</node>
+        <node>TextDocParser</node>
+        <node>SentenceBreakDetector2</node>
+        <node>ParenSentenceCombiner</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">uima.tt.TokenAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.SentenceAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tcas.DocumentAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.TextSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.NumericSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.GrossDescriptionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AddressSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.SubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.bulletList.BulletListAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.textdocparser.subannots.NewlineSentenceAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.syntacticUnitFinder.SyntacticUnit</type>
+          <type allAnnotatorFeatures="true">uima.tt.TokenLikeAnnotation</type>
+        </outputs>
+        <languagesSupported>
+          <language>en</language>
+        </languagesSupported>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</taeDescription>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRPatient</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRPatient</name>
+      <description>patient object</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>Observations</name>
+          <description>observation objects</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

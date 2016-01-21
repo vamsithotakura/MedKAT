@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>NewlineSentenceAnnotation</name>
+  <description>Annotation of text delimited by new-line characters. These are frequently sentences or paragraphs.</description>
+  <version>1.0</version>
+  <vendor/>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.taes.textdocparser.subannots.NewlineSentenceAnnotation</name>
+      <description>Annotation of new-line delimited lines.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.diagnosisTypeDetector.TumorModelAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>TumorModelAnnotator</name>
+    <configurationParameters>
+      <configurationParameter>
+        <name>SectionAnnotations</name>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ExcludedSubSubsections</name>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ConstrainingAnnotations</name>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ConstrainingAnnotationFeatures</name>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>AnnotatorName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>OnlyProcessContentSection</name>
+        <type>Boolean</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ExcludingPrepositions</name>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>CoreferenceAnnotationType</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>CoreferenceFeature</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>siteTypeName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>siteTerminologyFeatureName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>siteCodeFeatureName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>siteCorefsFeatureName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>diagnosisTypeName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>diagnosisTerminologyFeatureName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>diagnosisCodeFeatureName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>diagnosisCorefsFeatureName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>diagnosisNegationFeatureName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>siteNegationFeatureName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>tumorSizeTypeName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>SectionAnnotations</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>ExcludedSubSubsections</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.taes.subSubsectionDetector.NotesSubSubsection</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>AnnotatorName</name>
+        <value>
+          <string>TumorModelAnnotator</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>OnlyProcessContentSection</name>
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>ExcludingPrepositions</name>
+        <value>
+          <array>
+            <string>from</string>
+            <string>through</string>
+            <string>into</string>
+            <string>to</string>
+            <string>at</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>CoreferenceAnnotationType</name>
+        <value>
+          <string>org.ohnlp.medkat.scr.types.SCRCoreference</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>CoreferenceFeature</name>
+        <value>
+          <string>Elements</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>siteTypeName</name>
+        <value>
+          <string>org.ohnlp.medkat.scr.types.SCRAnatomicalSite</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>siteTerminologyFeatureName</name>
+        <value>
+          <string>Terminology</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>siteCodeFeatureName</name>
+        <value>
+          <string>Code</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>siteCorefsFeatureName</name>
+        <value>
+          <string>Coreferences</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>diagnosisTypeName</name>
+        <value>
+          <string>org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>diagnosisTerminologyFeatureName</name>
+        <value>
+          <string>Terminology</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>diagnosisCodeFeatureName</name>
+        <value>
+          <string>Code</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>diagnosisCorefsFeatureName</name>
+        <value>
+          <string>Coreferences</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>diagnosisNegationFeatureName</name>
+        <value>
+          <string>Negation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>siteNegationFeatureName</name>
+        <value>
+          <string>Negation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>tumorSizeTypeName</name>
+        <value>
+          <string>org.ohnlp.medkat.taes.disambiguator.TumorSizeAnnotation</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="org.ohnlp.medkat.taes.conceptMapper.DictTerm"/>
+        <import name="org.ohnlp.medkat.taes.subsectionDetector.SubHeading"/>
+        <import location="../../../../MedKAT_NLP/descriptors/type_system/SPTypes.xml"/>
+        <import location="../../../../MedKAT_NLP/descriptors/type_system/NLPTypes.xml"/>
+        <import name="org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.diagnosisTypeDetector.DiagnosisBase"/>
+        <import name="org.ohnlp.medkat.taes.diagnosisTypeDetector.LymphDiagnosis"/>
+        <import name="org.ohnlp.medkat.taes.diagnosisTypeDetector.MetastaticDiagnosis"/>
+        <import name="org.ohnlp.medkat.taes.diagnosisTypeDetector.OtherDiagnosis"/>
+        <import name="org.ohnlp.medkat.taes.diagnosisTypeDetector.PrimaryDiagnosis"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRAnatomicalSite"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRCoreference"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRMetastaticTumor"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRMetastaticTumorReading"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRPrimaryTumor"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRPrimaryTumorReading"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRGradeValue"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities>
+      <priorityList>
+        <type>org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+        <type>org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation</type>
+        <type>uima.tt.NPAnnotation</type>
+        <type>uima.tt.NPListAnnotation</type>
+        <type>uima.tt.PPAnnotation</type>
+        <type>org.ohnlp.medkat.taes.conceptMapper.DictTerm</type>
+        <type>org.ohnlp.medkat.scr.types.SCRAnatomicalSite</type>
+        <type>org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis</type>
+        <type>org.ohnlp.medkat.scr.types.SCRGradeValue</type>
+      </priorityList>
+    </typePriorities>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.conceptMapper.DictTerm</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRCoreference</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRAnatomicalSite</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.coreferencer.CoreferringDiagnoses</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.PrimaryDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.OtherDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.MetastaticDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.LymphDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.DiagnosisBase</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRPrimaryTumorReading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRPrimaryTumor</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRMetastaticTumorReading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRMetastaticTumor</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

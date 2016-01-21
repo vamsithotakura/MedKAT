@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<name>DiagnosisBase</name>
+<description></description>
+<version>1.0</version>
+<types>
+<typeDescription>
+<name>org.ohnlp.medkat.taes.diagnosisTypeDetector.DiagnosisBase</name>
+<description></description>
+<supertypeName>uima.tcas.Annotation</supertypeName>
+<features>
+<featureDescription>
+<name>term</name>
+<description></description>
+<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>sites</name>
+<description></description>
+<rangeTypeName>uima.cas.FSArray</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+</types>
+</typeSystemDescription>

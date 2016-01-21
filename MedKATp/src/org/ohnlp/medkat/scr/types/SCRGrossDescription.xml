@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRGrossDescription</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.scr.types.SCRGenericReading"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRGrossDescription</name>
+      <description>gross description object</description>
+      <supertypeName>org.ohnlp.medkat.scr.types.SCRGenericReading</supertypeName>
+      <features>
+        <featureDescription>
+          <name>Parts</name>
+          <description>gross description parts</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

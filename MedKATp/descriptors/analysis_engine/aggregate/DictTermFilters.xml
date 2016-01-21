@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+<primitive>false</primitive>
+<delegateAnalysisEngineSpecifiers>
+<delegateAnalysisEngine key="DuplicateTermFilter">
+<import location="../primitive/DuplicateTermFilter.xml"/>
+</delegateAnalysisEngine>
+<delegateAnalysisEngine key="IgnoredTermFilter">
+<import location="../primitive/IgnoredTermFilter.xml"/>
+</delegateAnalysisEngine>
+<delegateAnalysisEngine key="SubsumptionFilter">
+<import location="../primitive/SubsumptionFilter.xml"/>
+</delegateAnalysisEngine>
+<delegateAnalysisEngine key="CommaAndDisallowedFilter">
+<import location="../primitive/CommaAndDisallowedFilter.xml"/>
+</delegateAnalysisEngine>
+<delegateAnalysisEngine key="ModifierTermFilter">
+<import location="../primitive/ModifierTermFilter.xml"/>
+</delegateAnalysisEngine>
+<delegateAnalysisEngine key="SimpleSubsumptionFilter">
+<import location="../primitive/SimpleSubsumptionFilter.xml"/>
+</delegateAnalysisEngine>
+</delegateAnalysisEngineSpecifiers>
+<analysisEngineMetaData>
+<name>DictTermFilter</name>
+<configurationParameters/>
+<configurationParameterSettings/>
+<flowConstraints>
+<fixedFlow>
+<node>SimpleSubsumptionFilter</node>
+<node>ModifierTermFilter</node>
+<node>CommaAndDisallowedFilter</node>
+<node>IgnoredTermFilter</node>
+<node>DuplicateTermFilter</node>
+<node>SubsumptionFilter</node>
+</fixedFlow>
+</flowConstraints>
+<fsIndexCollection/>
+<capabilities>
+<capability>
+<inputs/>
+<outputs/>
+<languagesSupported/>
+</capability>
+</capabilities>
+<operationalProperties>
+<modifiesCas>true</modifiesCas>
+<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+</operationalProperties>
+</analysisEngineMetaData>
+</taeDescription>

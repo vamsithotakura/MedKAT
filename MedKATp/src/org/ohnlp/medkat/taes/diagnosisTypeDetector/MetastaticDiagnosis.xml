@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<name>LymphDiagnosis</name>
+<description></description>
+<version>1.0</version>
+<imports>
+<import name="org.ohnlp.medkat.taes.diagnosisTypeDetector.DiagnosisBase"/>
+</imports>
+<types>
+<typeDescription>
+<name>org.ohnlp.medkat.taes.diagnosisTypeDetector.MetastaticDiagnosis</name>
+<description></description>
+<supertypeName>org.ohnlp.medkat.taes.diagnosisTypeDetector.DiagnosisBase</supertypeName>
+</typeDescription>
+</types>
+</typeSystemDescription>

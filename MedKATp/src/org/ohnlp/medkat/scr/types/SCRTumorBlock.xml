@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRTumorBlock</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.scr.types.SCRSpannedAnnotation"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRTumorBlock</name>
+      <description>tumor block</description>
+      <supertypeName>org.ohnlp.medkat.scr.types.SCRSpannedAnnotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

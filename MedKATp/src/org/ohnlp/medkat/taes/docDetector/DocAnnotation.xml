@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<name>DcoAnnotation</name>
+<description>Annotates any MDs that are found.</description>
+<version>1.0</version>
+<vendor></vendor>
+<types>
+<typeDescription>
+<name>org.ohnlp.medkat.taes.docDetector.DocAnnotation</name>
+<description/>
+<supertypeName>uima.tcas.Annotation</supertypeName>
+</typeDescription>
+</types>
+</typeSystemDescription>

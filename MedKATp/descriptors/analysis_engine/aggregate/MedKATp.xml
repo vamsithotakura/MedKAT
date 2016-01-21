@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="MedKATp_PostCDA">
+      <import location="MedKATp_PostCDA.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="MedKATp_PreCDA">
+      <import location="MedKATp_PreCDA.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>MedKATp</name>
+    <description/>
+    <version/>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>MedKATp_PreCDA</node>
+        <node>MedKATp_PostCDA</node>
+      </fixedFlow>
+    </flowConstraints>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">uima.tt.TokenAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.SentenceAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tcas.DocumentAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.conceptMapper.DictTerm</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.conceptMapper.NoTerm</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.uniqueID.UniqueIDAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.mrnDetector.MRNAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.tumorBlock.TumorBlockAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LocationExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.SizeExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.UnitExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.maxSize.MaxSizeSubSection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.DiagnosisSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.StageSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.MetastaticSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.LateralSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.MaxSizeSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.LymphSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.SiteSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.LymphStatusSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.TextSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SummaryOfSectionsAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SpecimensSubmittedAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SpecialStudiesAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ServiceAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ProceduresAddendaAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PhysicianAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PermanentDiagnosisAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PatientAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PatientAddressAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.NumericSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.MRNSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.IntraoperativeConsultationAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.InteroperativeConsultationAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.IAttestAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.GrossDescriptionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.FrozenSectionDiagnosisAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.FinancialNumberAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfReportAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfReceiptAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfProcedureAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfCollection_Procedure_OutsideReportAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfBirthAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ClinicalHistoryDiagnosisAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AddressSectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AddendumDiagnosisAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AccountNumberAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AccessionNumberAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.gradeDetector.GradeAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.SubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.GradeBaseSubSubsectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.DiagnosisBaseSubSubsectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.SummaryOfSectionsSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.NotesSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.AdenocarcinomaSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.BenignProcessesSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.BladderNeckSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.CapsuleSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.GleasonsGradeSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.HighGradeProstaticIntraepithelialNeoplasiaSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.HighRiskLesionsSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.LymphNodesSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.NonNeoplasticProstateSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.PerineuralInvasionSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.ProstatebiopsylocationSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.SeminalVesiclesSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.StagingSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.SurgicalMarginsSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.TumorMulticentricitySubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.TumorQuantificationsSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.VascularInvasionSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.FuhrmanNuclearGradeSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.HistologicGradeSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.BladderLocalInvasionSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.EpididymisSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.ExtravesicalTumorExtensionSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.FemaleGenitalOrgansSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.IntratubularGermCellNeoplasiaSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.LocalInvasionSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.MuscularisPropriaSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.NonNeoplasticMucosaSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.NonNeoplasticProstateSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.NonNeoplasticTestisSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.NoteSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.PatternofgrowthoftheInvasivecomponentSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.PatternofgrowthoftheNonInvasivecomponentSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.PerivesicalLymphNodesSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.ProstateSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.ReteTestisSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.SpermaticCordSurgicalMarginsSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.StagingAJCC1997SubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.StagingAJCC2002SubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.TumorLocationSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.TumorSizeSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.TumorTypeSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.TunicaAlbugineaSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.UnprocessedSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.NumberExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.NuclearGradeSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subSubsectionDetector.FIGOGradeSubSubsection</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.InvasiveSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.conceptMapper.OriginTerm</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.MaxSubsectionIndicator</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.bulletList.BulletListAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.docDetector.DocAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.VGAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.TCAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.PPAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.NPSAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.NPPAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.NPListAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.NPAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.MWU</type>
+          <type allAnnotatorFeatures="true">uima.tt.AdjPAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.UnitAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.annotationSelector.GradeSelected</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.DimensionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.RangeAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.ExtentAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sexAnnotator.SexAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.PrimaryDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.textdocparser.subannots.NewlineSentenceAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.textdocparser.subannots.ParenAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.OtherDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.MetastaticDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.MarginAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.DimensionSetAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.LymphDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.support.dateFinder.DateAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.SizeDimensionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.OtherDimensionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.SiteCoreferencer.CoreferringSites</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.coreferencer.CoreferringSites</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.coreferencer.CoreferringDiagnoses</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.DimensionAnnotationBase</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.diagnosisTypeDetector.DiagnosisBase</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.coreferencer.CorefAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRMention</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRCoreference</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRAnatomicalSite</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRLymphNodesReading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRGrossDescriptionPart</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRGrossDescription</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRNamedEntity</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRSpannedAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRGenericReading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRLymphNodes</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRDimension</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRDate</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRSize</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRPrimaryTumorReading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRPrimaryTumor</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRMetastaticTumorReading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRMetastaticTumor</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRGradeValue</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.TumorSizeAnnotation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</taeDescription>

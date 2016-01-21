@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.lymphStatus.LymphStatus</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>lymphStatus</name>
+    <description>parses positive vs all nodes expressions</description>
+    <version/>
+    <vendor/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>LymphLevelExpressionName</name>
+        <description>Type name of annotations that specify lymph nodes expressions</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>NumberName</name>
+        <description>Type name of annotations that specify numeric expressions</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>SentenceClass</name>
+        <description>Class name of sentence annotations</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>LymphLevelExpressionName</name>
+        <value>
+          <string>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>NumberName</name>
+        <value>
+          <string>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.NumberExpression</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SentenceClass</name>
+        <value>
+          <string>uima.tt.SentenceAnnotation</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression"/>
+        <import name="org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.NumberExpression"/>
+        <import name="org.ohnlp.medkat.taes.subsectionDetector.SubHeading"/>
+        <import name="org.ohnlp.medkat.taes.support.dateFinder.DateAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.conceptMapper.DictTerm"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.conceptMapper.DictTerm</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.NumberExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.support.dateFinder.DateAnnotation</type>
+        </inputs>
+        <outputs>
+          <type>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

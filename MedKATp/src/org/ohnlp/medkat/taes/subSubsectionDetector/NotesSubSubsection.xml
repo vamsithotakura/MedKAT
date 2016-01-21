@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>NotesSubSubsection</name>
+  <description/>
+  <version>1.0</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.taes.subSubsectionDetector.SubSubsection"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.taes.subSubsectionDetector.NotesSubSubsection</name>
+      <description/>
+      <supertypeName>org.ohnlp.medkat.taes.subSubsectionDetector.SubSubsection</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

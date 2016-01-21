@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRHistologicalDiagnosis</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.scr.types.SCRNamedEntityBase"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis</name>
+      <description>SCR HistologicalDiagnosis type</description>
+      <supertypeName>org.ohnlp.medkat.scr.types.SCRNamedEntityBase</supertypeName>
+      <features>
+        <featureDescription>
+          <name>Coreferences</name>
+          <description>array of coreference objects that contain this diagnosis</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

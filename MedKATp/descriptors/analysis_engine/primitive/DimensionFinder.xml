@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.dimensionAnnotator.DimensionAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>DimensionAnnotator</name>
+    <version>1.0</version>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <typeSystemDescription>
+      <imports>
+        <import name="org.ohnlp.medkat.taes.dimensionAnnotator.DimensionAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.dimensionAnnotator.UnitAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.dimensionAnnotator.ExtentAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.dimensionAnnotator.RangeAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.dimensionAnnotator.DimensionSetAnnotation"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRDimension"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRSize"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.DimensionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.UnitAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.ExtentAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.RangeAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.dimensionAnnotator.DimensionSetAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRDimension</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRSize</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

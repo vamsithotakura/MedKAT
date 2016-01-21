@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRPrimaryTumorReading</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.scr.types.SCRGenericReading"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRPrimaryTumorReading</name>
+      <description>primary tumor reading object</description>
+      <supertypeName>org.ohnlp.medkat.scr.types.SCRGenericReading</supertypeName>
+      <features>
+        <featureDescription>
+          <name>PrimarySites</name>
+          <description/>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>GradeValues</name>
+          <description>grade values of the primary tumor</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Diagnoses</name>
+          <description>diagnoses assosiated with the primary tumor</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>InvasionTypes</name>
+          <description>invasion types associated with the primary tumor</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Size</name>
+          <description>size of the primary tumor</description>
+          <rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

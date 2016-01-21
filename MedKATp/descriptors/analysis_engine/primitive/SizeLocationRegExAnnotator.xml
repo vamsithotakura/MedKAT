@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.SizeLocationRegExAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>RegEx Annotator</name>
+    <description>Matches regular expressions in document text.</description>
+    <version/>
+    <vendor/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>Patterns</name>
+        <description>Regular expression patterns to match.  The language is that supported by Java 1.4.</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>PatternFiles</name>
+        <description>Names of files containing patterns to match, using the same pattern language as for the
+Patterns configuration paramter.  Either Patterns or PatternFiles may be specified, but not both.</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>TypeNames</name>
+        <description>Names of CAS Types to create for the patterns found.  The indexes of this array
+correspond to the indexes of the Patterns or PatternFiles arrays.  If a match is found for
+Patterns[i] or for any pattern in PatternFile[i], it will result in an annotation of type
+TypeNames[i].</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ContainingAnnotationTypes</name>
+        <description>Names of CAS Input Types within which annotations should be created.</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>AnnotateEntireContainingAnnotation</name>
+        <description>When the ContainingAnnoationTypes parameter is specified, a value of true for this
+	parameter will cause the entire containing annotation to be used as the span of the new
+	annotation, rather than just the span of the regular expression match.  This can be used
+	to "classify" previously created annotations according to whether or not they contain
+	text matching a regular expression.</description>
+        <type>Boolean</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>Patterns</name>
+        <value>
+          <array>
+            <string>\d\so\'\sclock\saxis|\d\d\so\'\sclock\saxis|\d\d\:\d\d\saxis|\d\:\d\d\saxis|\d\d\so\'\sclock|\d\d\sO\'\sCLOCK|\d\so\'\sclock|\d\sO\'\sCLOCK|\d\so\'clock|\d\d\so\'clock|\d\d:\d\d|\d\:\d\d</string>
+            <string>(?i)(?:[&lt;&gt;]?(?:(?:\d+(?:\.\d*)?|\.\d+)\s*[cm]m))|(?:\d+(?:\.\d*)?|\.\d+)\s*x\s*(?:\d+(?:\.\d*)?|\.\d+)(?:\s*x\s*(?:\d+(?:\.\d*)?|\.\d+))?\s*(?:[cm]m)?</string>
+            <string>cm|CM|mm|MM</string>
+            <string>\d+/\d+|number\s*of\s*metastatic\s*nodes:[123456789][0123456789]*</string>
+            <string>__NUMBER__</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>TypeNames</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LocationExpression</string>
+            <string>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.SizeExpression</string>
+            <string>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.UnitExpression</string>
+            <string>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression</string>
+            <string>org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.NumberExpression</string>
+          </array>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LocationExpression"/>
+        <import name="org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.SizeExpression"/>
+        <import name="org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.UnitExpression"/>
+        <import name="org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression"/>
+        <import name="org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.NumberExpression"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LocationExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.SizeExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.UnitExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.NumberExpression</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

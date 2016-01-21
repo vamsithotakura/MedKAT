@@ -1,0 +1,23 @@
+INTRODUCTION
+------------
+MedKATp project contains an implementation of various MedKAT annotators as well as their aggregate and primitive descriptors.
+	
+ORGANIZATION
+------------
+The MedKATp distribution contains src and descriptors directories. Source directory contains implementation of the annotators, while descriptors directory contains  descriptors for primitive annotators as well as the aggregates
+	
+MedKATp project also contains:
+	- dictionaries used by concept mapper in it's resource/dict directory.
+	- documentation of entire MedKATp system in doc directory
+	- configuration file for executing the MedKATp in it's run_configiration directory
+	
+Note: the entire MedKAT system can be run using ./descriptors/analysis_engine/aggregate/MedKATp.xml aggregate descriptor
+	
+		
+DEPENDANCIES
+------------
+MedKATp requires:
+	 conceptMapper project. See conceptMapper/README file for more information 
+	 MedKAT_NLPBase project. See MedKAT_NLPBase/README file for more information 
+	 MedKAT_NLP project. See MedKAT_NLP/README file for more information
+	 Apache UIMA 2.2 or later. See http://incubator.apache.org/uima/ for more information about UIMA.

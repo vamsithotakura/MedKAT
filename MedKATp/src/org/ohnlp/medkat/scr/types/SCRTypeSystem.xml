@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRTypeSystem</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.scr.types.SCRAnatomicalSite"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRCoreference"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRDate"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRDimension"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRDisease"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRDocumentType"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRGenericReading"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRGradeValue"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRGrossDescription"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRGrossDescriptionPart"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRInvasionType"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRLymphNodes"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRLymphNodesReading"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRMargin"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRMetastaticTumor"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRMetastaticTumorReading"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRNamedEntity"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRNamedEntityBase"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRMultipleReadingModel"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRObservation"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRPatient"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRPrimaryTumor"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRPrimaryTumorReading"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRProcedure"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRSize"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRSpannedAnnotation"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRStage"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRTextSpan"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRTissueBank"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRTumorBlock"/>
+    <import name="org.ohnlp.medkat.scr.types.SCRTumorSpecimen"/>
+  </imports>
+</typeSystemDescription>

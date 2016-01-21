@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.grossDescription.GrossDescriptionAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>GrossDescriptionAnnotator</name>
+    <description/>
+    <version>1.0</version>
+    <vendor>IBM</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>SizeTypeNames</name>
+        <description>Type names of annotations representing gross description sizes</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>SiteTypeNames</name>
+        <description>Type names of annotations representing anatomical sites</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>FragmentsFeatureNames</name>
+        <description>A name of an attribute that contain textual fragments of anatomical sites</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>SentenceClass</name>
+        <description>lass name of annotations that represent sentences</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>TokenClass</name>
+        <description>lass name of annotations that represent tokens</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>NPClass</name>
+        <description>Class name for annotation that represent noun phrases</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>NPListClass</name>
+        <description>Class name for annotation that represent list of noun phrases</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>NPPClass</name>
+        <description>Class name for annotation that represent prepositional noun phrases</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>NPSClass</name>
+        <description>Class name for annotation that represent possessive noun phrases</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>FragmentsFeatureNames</name>
+        <value>
+          <array>
+            <string>Fragments</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SizeTypeNames</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.scr.types.SCRSize</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SiteTypeNames</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.scr.types.SCRAnatomicalSite</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SentenceClass</name>
+        <value>
+          <string>uima.tt.SentenceAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>TokenClass</name>
+        <value>
+          <string>uima.tt.TokenAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>NPClass</name>
+        <value>
+          <string>uima.tt.NPAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>NPListClass</name>
+        <value>
+          <string>uima.tt.NPListAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>NPPClass</name>
+        <value>
+          <string>uima.tt.NPPAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>NPSClass</name>
+        <value>
+          <string>uima.tt.NPSAnnotation</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="../../../../MedKAT_NLP/descriptors/type_system/SPTypes.xml"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRGrossDescriptionPart"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRGrossDescription"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRAnatomicalSite"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRSize"/>
+        <import name="org.ohnlp.medkat.taes.sectionFinder.GrossDescriptionAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.subsectionDetector.SubHeading"/>
+        <import name="org.ohnlp.medkat.taes.syntacticUnitFinder.SyntacticUnit"/>
+        <import name="org.ohnlp.medkat.taes.grossDescription.GrossDescriptionModel"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.syntacticUnitFinder.SyntacticUnit</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRSize</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRAnatomicalSite</type>
+          <type allAnnotatorFeatures="true">uima.tt.NPSAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.NPPAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.NPListAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tt.NPAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.GrossDescriptionAnnotation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRGrossDescriptionPart</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRGrossDescription</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.grossDescription.ParenSeparatedNPAnnotation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

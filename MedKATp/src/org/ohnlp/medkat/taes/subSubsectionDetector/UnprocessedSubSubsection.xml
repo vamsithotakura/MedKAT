@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>UnprocessedSubSubsection</name>
+  <description>Used for sub-subsections within the diagnosis section that are not going to require any special processing (as opposed to grading, staging, etc. sub-subsections). </description>
+  <version>1.0</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.taes.subSubsectionDetector.DiagnosisBaseSubSubsectionAnnotation"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.taes.subSubsectionDetector.UnprocessedSubSubsection</name>
+      <description/>
+      <supertypeName>org.ohnlp.medkat.taes.subSubsectionDetector.DiagnosisBaseSubSubsectionAnnotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

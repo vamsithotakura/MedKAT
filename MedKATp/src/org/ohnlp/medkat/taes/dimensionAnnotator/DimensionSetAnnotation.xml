@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<name>DimensionSetAnnotation</name>
+<description></description>
+<version>1.0</version>
+<types>
+<typeDescription>
+<name>org.ohnlp.medkat.taes.dimensionAnnotator.DimensionSetAnnotation</name>
+<description></description>
+<supertypeName>uima.tcas.Annotation</supertypeName>
+<features>
+<featureDescription>
+<name>dimensions</name>
+<description/>
+<rangeTypeName>uima.cas.FSArray</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+</types>
+</typeSystemDescription>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<name>DimensionAnnotation</name>
+<description></description>
+<version>1.0</version>
+<imports>
+<import name="org.ohnlp.medkat.taes.dimensionAnnotator.UnitAnnotation"/>
+<import name="org.ohnlp.medkat.taes.dimensionAnnotator.ExtentAnnotation"/>
+</imports>
+<types>
+<typeDescription>
+<name>org.ohnlp.medkat.taes.dimensionAnnotator.DimensionAnnotation</name>
+<description></description>
+<supertypeName>uima.tcas.Annotation</supertypeName>
+<features>
+<featureDescription>
+<name>value</name>
+<description/>
+<rangeTypeName>org.ohnlp.medkat.taes.dimensionAnnotator.ExtentAnnotation</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>unit</name>
+<description/>
+<rangeTypeName>org.ohnlp.medkat.taes.dimensionAnnotator.UnitAnnotation</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+</types>
+</typeSystemDescription>

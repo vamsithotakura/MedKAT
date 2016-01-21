@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>OtherDimensionAnnotation</name>
+  <description/>
+  <version>1.0</version>
+  <vendor/>
+  <imports>
+    <import name="org.ohnlp.medkat.taes.disambiguator.DimensionAnnotationBase"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.taes.disambiguator.OtherDimensionAnnotation</name>
+      <description/>
+      <supertypeName>org.ohnlp.medkat.taes.disambiguator.DimensionAnnotationBase</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

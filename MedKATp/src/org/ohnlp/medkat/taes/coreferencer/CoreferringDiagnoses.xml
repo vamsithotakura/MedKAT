@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<name>coreferringDiagnoses</name>
+<description></description>
+<version>1.0</version>
+<imports>
+<import name="org.ohnlp.medkat.taes.coreferencer.CorefAnnotation"/>
+</imports>
+<types>
+<typeDescription>
+<name>org.ohnlp.medkat.taes.coreferencer.CoreferringDiagnoses</name>
+<description></description>
+<supertypeName>org.ohnlp.medkat.taes.coreferencer.CorefAnnotation</supertypeName>
+<features />
+</typeDescription>
+</types>
+</typeSystemDescription>

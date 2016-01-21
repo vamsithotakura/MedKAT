@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.lymphNodes.LymphNodesAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>LymphNodesAnnotator</name>
+    <description/>
+    <version>1.0</version>
+    <vendor>IBM</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>DiagnosisTypes</name>
+        <description>Type names of annotations representing diagnoses</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>SiteTypes</name>
+        <description>Type names of annotations representing anatomical sites</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>UndefinedNodeCount</name>
+        <description>Numeric value that is assigned to appropriate attributes of lymph node model, when the number of the nodes is not specified in the report and cannot be inferred</description>
+        <type>Integer</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>SentenceClass</name>
+        <description>Class name of annotations that represent sentences</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>DiagnosisTypes</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SiteTypes</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.scr.types.SCRAnatomicalSite</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>UndefinedNodeCount</name>
+        <value>
+          <integer>999999</integer>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SentenceClass</name>
+        <value>
+          <string>uima.tt.SentenceAnnotation</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="org.ohnlp.medkat.scr.types.SCRLymphNodesReading"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRLymphNodes"/>
+        <import name="org.ohnlp.medkat.taes.conceptMapper.DictTerm"/>
+        <import name="org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression"/>
+        <import name="org.ohnlp.medkat.taes.subsectionDetector.SubHeading"/>
+        <import name="org.ohnlp.medkat.taes.syntacticUnitFinder.SyntacticUnit"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.syntacticUnitFinder.SyntacticUnit</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sizeLocationRegExAnnotator.LymphLevelExpression</type>
+          <type allAnnotatorFeatures="true">uima.tcas.DocumentAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.conceptMapper.DictTerm</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRLymphNodesReading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRLymphNodes</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+<primitive>true</primitive>
+<annotatorImplementationName>org.ohnlp.medkat.taes.bulletList.BulletListAnnotator</annotatorImplementationName>
+<analysisEngineMetaData>
+<name>BulletListAnnotator</name>
+<configurationParameters/>
+<configurationParameterSettings/>
+<typeSystemDescription>
+<imports>
+<import name="org.ohnlp.medkat.taes.bulletList.BulletListAnnotation"/>
+</imports>
+</typeSystemDescription>
+<capabilities>
+<capability>
+<inputs/>
+<outputs>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.bulletList.BulletListAnnotation</type>
+</outputs>
+<languagesSupported/>
+</capability>
+</capabilities>
+<operationalProperties>
+<modifiesCas>true</modifiesCas>
+<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+</operationalProperties>
+</analysisEngineMetaData>
+</taeDescription>

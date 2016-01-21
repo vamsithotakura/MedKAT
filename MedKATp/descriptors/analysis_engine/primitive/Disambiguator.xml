@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.disambiguator.Disambiguator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>Disambiguator</name>
+    <description>Disambiguates</description>
+    <configurationParameters>
+      <configurationParameter>
+        <name>spanAnnotationName</name>
+        <description>spans checked</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>nppAnnotationName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>npAnnotationName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>siteAnnotationName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ppAnnotationName</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ExcludingPrepositions</name>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>spanAnnotationName</name>
+        <value>
+          <string>uima.tt.SentenceAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>nppAnnotationName</name>
+        <value>
+          <string>uima.tt.NPPAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>npAnnotationName</name>
+        <value>
+          <string>uima.tt.NPAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>siteAnnotationName</name>
+        <value>
+          <string>org.ohnlp.medkat.scr.types.SCRAnatomicalSite</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>ppAnnotationName</name>
+        <value>
+          <string>uima.tt.PPAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>ExcludingPrepositions</name>
+        <value>
+          <array>
+            <string>from</string>
+            <string>to</string>
+          </array>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="org.ohnlp.medkat.taes.disambiguator.MarginAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.dimensionAnnotator.DimensionSetAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.disambiguator.OtherDimensionAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.disambiguator.SizeDimensionAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.disambiguator.TumorSizeAnnotation"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type>org.ohnlp.medkat.taes.dimensionAnnotator.DimensionSetAnnotation</type>
+          <type>org.ohnlp.medkat.taes.npMerger.NPCombinedAnnotation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.MarginAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.OtherDimensionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.SizeDimensionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.disambiguator.TumorSizeAnnotation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

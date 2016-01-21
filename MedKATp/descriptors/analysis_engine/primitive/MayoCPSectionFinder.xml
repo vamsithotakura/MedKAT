@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+<primitive>true</primitive>
+<annotatorImplementationName>org.ohnlp.medkat.taes.sectionFinder.SectionFinder</annotatorImplementationName>
+<analysisEngineMetaData>
+<name>SectionFinder</name>
+<description>Divide document into sections</description>
+<version></version>
+<vendor></vendor>
+<configurationParameters>
+<configurationParameter>
+<name>sectionHeadingStrings</name>
+<description>section heading strings which should be found</description>
+<type>String</type>
+<multiValued>true</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+<configurationParameter>
+<name>sectionAnnotations</name>
+<description>Name of annotations to be inserted</description>
+<type>String</type>
+<multiValued>true</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+</configurationParameters>
+<configurationParameterSettings>
+<nameValuePair>
+<name>sectionHeadingStrings</name>
+<value>
+<array>
+<string>FINAL DIAGNOSIS</string>
+<string>GROSS DESCRIPTION</string>
+</array>
+</value>
+</nameValuePair>
+<nameValuePair>
+<name>sectionAnnotations</name>
+<value>
+<array>
+<string>org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation</string>
+<string>org.ohnlp.medkat.taes.sectionFinder.GrossDescriptionAnnotation</string>
+</array>
+</value>
+</nameValuePair>
+</configurationParameterSettings>
+<typeSystemDescription>
+<imports>
+<import name="org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.FrozenSectionDiagnosisAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.PermanentDiagnosisAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.ClinicalHistoryDiagnosisAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.ClinicalHistoryDiagnosisAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.PatientAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.AccessionNumberAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.MRNSectionAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.ServiceAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.AccountNumberAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.AccountNumberAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.DateOfProcedureAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.DateOfBirthAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.DateOfReceiptAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.DateOfReportAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.PhysicianAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.PatientAddressAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.SpecimensSubmittedAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.SpecialStudiesAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.GrossDescriptionAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.IntraoperativeConsultationAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.IAttestAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.SummaryOfSectionsAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.SummaryOfSectionsAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.SummaryOfSectionsAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.ProceduresAddendaAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.AddendumDiagnosisAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.InteroperativeConsultationAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.DateOfCollection_Procedure_OutsideReportAnnotation"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.FinancialNumberAnnotation"/>
+</imports>
+</typeSystemDescription>
+<capabilities>
+<capability>
+<inputs/>
+<outputs>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.FrozenSectionDiagnosisAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PermanentDiagnosisAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ClinicalHistoryDiagnosisAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ClinicalHistoryDiagnosisAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PatientAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AccessionNumberAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.MRNSectionAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ServiceAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AccountNumberAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AccountNumberAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfProcedureAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfBirthAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfReceiptAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfReportAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PhysicianAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PatientAddressAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SpecimensSubmittedAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SpecialStudiesAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.GrossDescriptionAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.IntraoperativeConsultationAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.IAttestAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SummaryOfSectionsAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SummaryOfSectionsAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SummaryOfSectionsAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ProceduresAddendaAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AddendumDiagnosisAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.InteroperativeConsultationAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfCollection_Procedure_OutsideReportAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.FinancialNumberAnnotationMRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.TextSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SummaryOfSectionsAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SpecimensSubmittedAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SpecialStudiesAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ServiceAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ProceduresAddendaAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PhysicianAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PermanentDiagnosisAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PatientAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.PatientAddressAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.NumericSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.MRNSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.IntraoperativeConsultationAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.InteroperativeConsultationAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.IAttestAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.GrossDescriptionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.FrozenSectionDiagnosisAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.FinancialNumberAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfReportAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfReceiptAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfProcedureAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfCollection_Procedure_OutsideReportAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DateOfBirthAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.ClinicalHistoryDiagnosisAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AddressSectionAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AddendumDiagnosisAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AccountNumberAnnotation</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.AccessionNumberAnnotation</type>
+</outputs>
+<languagesSupported/>
+</capability>
+</capabilities>
+<operationalProperties>
+<modifiesCas>true</modifiesCas>
+<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+</operationalProperties>
+</analysisEngineMetaData>
+</taeDescription>

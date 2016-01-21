@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SCRAnatomicalSite</name>
+  <description/>
+  <version>1</version>
+  <vendor>IBM</vendor>
+  <imports>
+    <import name="org.ohnlp.medkat.scr.types.SCRNamedEntityBase"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>org.ohnlp.medkat.scr.types.SCRAnatomicalSite</name>
+      <description>SCR AnatomicalSite type</description>
+      <supertypeName>org.ohnlp.medkat.scr.types.SCRNamedEntityBase</supertypeName>
+      <features>
+        <featureDescription>
+          <name>Laterality</name>
+          <description>Laterality of anatomical site</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Modifiers</name>
+          <description>modifiers for the anatomical site</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>InferredCode</name>
+          <description>Code that is assigned by NLP algorithms rather than dictionary matching</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Coreferences</name>
+          <description>array of coreference objects that contain this site</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

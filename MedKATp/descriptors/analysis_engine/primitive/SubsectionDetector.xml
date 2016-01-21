@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+<primitive>true</primitive>
+<annotatorImplementationName>org.ohnlp.medkat.taes.subsectionDetector.SubsectionDetector</annotatorImplementationName>
+<analysisEngineMetaData>
+<name>SubsectionDetector</name>
+<version>1.0</version>
+<configurationParameters>
+<configurationParameter>
+<name>Patterns</name>
+<description>Regex patterns which indicate subsection. MUST have subsection number as first captured group in pattern, with possible subsequent subsection number as second captured group</description>
+<type>String</type>
+<multiValued>true</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+</configurationParameters>
+<configurationParameterSettings>
+<nameValuePair>
+<name>Patterns</name>
+<value>
+<array>
+<string>^\s*(\d{1,2}(?:,\s*\d{1,2})*)\)</string>
+<!-- <string>^\s*([a-zA-Z](?:,\s*[a-zA-Z])*)[.):]\s+</string> -->
+<string>^\s*(\d{1,2}(?:,\s*\d{1,2})*)\.\s+</string>
+<string>^\s*(\d{1,2}(?:,\s*\d{1,2})*):\sSP\:\s+</string>
+<string>^\s*SP\:\s+</string>
+<string>^\s*Part\s(\d{1,2}(?:,\s*\d{1,2})*):\s+</string>
+<string>^\s*\#(\d{1,2}(?:,\s*\d{1,2})*)\.\s+</string>
+<string>^\s*(\d{1,2}(?:,\s*\d{1,2})*):\s+</string>
+<string>^\s*BI\:\s+</string>
+<string>^\s*(\d{1,2})(-)(\d{1,2})\)</string>
+<string>^\s*(\d{1,2})(-)(\d{1,2})\.\s+</string>
+<string>^\s*(\d{1,2})(-)(\d{1,2}):\sSP\:\s+</string>
+<string>^\s*Part\s(\d{1,2})(-)(\d{1,2}):\s+</string>
+<string>^\s*\#(\d{1,2})(-)(\d{1,2})\.\s+</string>
+<string>^\s*(\d{1,2})(-)(\d{1,2}):\s+</string>
+</array>
+</value>
+</nameValuePair>
+</configurationParameterSettings>
+<typeSystemDescription>
+<imports>
+<import name="org.ohnlp.medkat.taes.subsectionDetector.SubHeading"/>
+<import name="org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation"/>
+<import name="org.ohnlp.medkat.taes.subsectionDetector.MaxSubsectionIndicator"/>
+</imports>
+</typeSystemDescription>
+<capabilities>
+<capability>
+<inputs>
+<type>org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation</type>
+</inputs>
+<outputs>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+<type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.MaxSubsectionIndicator</type>
+</outputs>
+<languagesSupported/>
+</capability>
+</capabilities>
+<operationalProperties>
+<modifiesCas>true</modifiesCas>
+<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+</operationalProperties>
+</analysisEngineMetaData>
+</taeDescription>

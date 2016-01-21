@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.textdocparser.TextDocParser</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>TextDocParser</name>
+    <description>FInds the Diagnosis annotation and splits it into a subhead and a bullet list entry</description>
+    <version/>
+    <vendor/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>subheadLeaders</name>
+        <description>Tags that indicate subheads in Gross Description</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>subheadLeaders</name>
+        <value>
+          <array>
+            <string>A.</string>
+            <string>B.</string>
+            <string>C.</string>
+            <string>D.</string>
+            <string>E.</string>
+            <string>F.</string>
+            <string>G.</string>
+          </array>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="org.ohnlp.medkat.taes.bulletList.BulletListAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.syntacticUnitFinder.SyntacticUnit"/>
+        <import name="org.ohnlp.medkat.taes.textdocparser.subannots.NewlineSentenceAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation"/>
+        <import name="org.ohnlp.medkat.taes.subsectionDetector.SubHeading"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.syntacticUnitFinder.SyntacticUnit</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.textdocparser.subannots.NewlineSentenceAnnotation</type>
+          <type allAnnotatorFeatures="true">uima.tcas.DocumentAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.sectionFinder.DiagnosisAnnotation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.subsectionDetector.SubHeading</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.bulletList.BulletListAnnotation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

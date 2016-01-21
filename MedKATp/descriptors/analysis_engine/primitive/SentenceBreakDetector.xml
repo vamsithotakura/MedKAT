@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.taes.syntacticUnitFinder.SentenceBreakDetector</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>SentenceBreakDetector</name>
+    <description>Finds sentences that overlap sections and breaks them into 2 smaller sentence annotations.</description>
+    <version/>
+    <vendor/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>SentenceClass</name>
+        <description>Major class that is to be broken up if it crosses boundaries of other subsections.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>SectionClasses</name>
+        <description>List of section types that are to be checked for sentence crossings.</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>SubsectionClass</name>
+        <description>Base class for subsections to be broken into sentences by line break. Used in synoptic reports.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>SentenceClass</name>
+        <value>
+          <string>uima.tt.SentenceAnnotation</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SectionClasses</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.taes.subsectionDetector.SubHeading</string>
+            <string>org.ohnlp.medkat.taes.sectionFinder.SectionAnnotation</string>
+            <string>org.ohnlp.medkat.taes.subSubsectionDetector.SubSubsection</string>
+            <string>org.ohnlp.medkat.taes.bulletList.BulletListAnnotation</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SubsectionClass</name>
+        <value>
+          <string>org.ohnlp.medkat.taes.subSubsectionDetector.DiagnosisBaseSubSubsectionAnnotation</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

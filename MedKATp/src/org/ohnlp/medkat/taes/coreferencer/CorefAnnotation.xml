@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<name>CorefAnnotation</name>
+<description></description>
+<version>1.0</version>
+<types>
+<typeDescription>
+<name>org.ohnlp.medkat.taes.coreferencer.CorefAnnotation</name>
+<description></description>
+<supertypeName>uima.tcas.Annotation</supertypeName>
+<features>
+<featureDescription>
+<name>subsectionNumber</name>
+<description></description>
+<rangeTypeName>uima.cas.Integer</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>elements</name>
+<description></description>
+<rangeTypeName>uima.cas.FSArray</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+</types>
+</typeSystemDescription>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.scr.typeConversion.SCRNamedEntityTypeConverter</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>SCRNamedEntityTypeConverter</name>
+    <description>Converts instances of internal MedKAT named entity types to SCRxxx external types. The conversion is performed for anatomical sites, diagnoses and general named entities. Instances of types that contain coreferenced objects are also converted to the corresponding external types.</description>
+    <version>1.0</version>
+    <vendor>IBM</vendor>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <typeSystemDescription>
+      <imports>
+        <import name="org.ohnlp.medkat.scr.types.SCRAnatomicalSite"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRCoreference"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis"/>
+        <import name="org.ohnlp.medkat.taes.conceptMapper.DictTerm"/>
+        <import name="org.ohnlp.medkat.taes.coreferencer.CorefAnnotation"/>
+        <import name="org.ohnlp.medkat.scr.types.SCRNamedEntity"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.conceptMapper.DictTerm</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.taes.coreferencer.CorefAnnotation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRSpannedAnnotation</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRHistologicalDiagnosis</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRCoreference</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRAnatomicalSite</type>
+          <type allAnnotatorFeatures="true">org.ohnlp.medkat.scr.types.SCRNamedEntity</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>
