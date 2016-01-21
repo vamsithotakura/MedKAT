@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MedKAT_NLPBase"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/UIMA"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/opennlp-libs"/>
+	<classpathentry kind="lib" path="C:/Users/vamsi/Downloads/uima-core.jar/uima-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vamsi/Downloads/OpenNLP Libs/maxent-2.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vamsi/Downloads/OpenNLP Libs/opennlp-tools-1.4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vamsi/Downloads/OpenNLP Libs/trove-3.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

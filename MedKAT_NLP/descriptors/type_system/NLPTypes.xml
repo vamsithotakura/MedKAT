@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<typeSystemDescription>
+	<name>NLP Types</name>
+	<description> Basic NLP types used by MedKAT</description>
+	<version>1.0</version>
+	<vendor>IBM</vendor>
+	<types>
+		<typeDescription>
+			<name>uima.tt.TokenAnnotation</name>
+			<description>Tokens.</description>
+			<supertypeName>uima.tcas.Annotation
+			</supertypeName>
+			<features>
+				<featureDescription>
+					<name>pennTag</name>
+					<description />
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>uima.tt.SentenceAnnotation</name>
+			<description>Sentences.</description>
+			<supertypeName>uima.tcas.Annotation
+			</supertypeName>
+		</typeDescription>
+	</types>
+</typeSystemDescription>

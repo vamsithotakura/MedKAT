@@ -1,0 +1,51 @@
+INTRODUCTION
+------------
+MedKAT_NLP is an OpenNLP based  collection of UIMA annotators. The following annotators are implemented:
+	- Tokenizer: creates annotations for individual tokens
+	- POS tagger: assigns POS tags to tokens
+	- Sentence detector:  create annotations at sentence boundaries
+	- Parser: creates phrasal annotation
+	
+MedKAT_NLP also provides implementation for OpenNLP specific post processing annotators such as POS tagger adaptor
+
+ORGANIZATION
+------------
+The MedKAT_NLP distribution contains src and descriptors directories. Source directory contains implementation of annotators listed above, while descriptors directory contains  descriptors for primitive annotators:
+	./descriptors/analysis_engine/primitive/MedKATTokenizer.xml
+	./descriptors/analysis_engine/primitive/MedKATPOSTagger.xml
+	./descriptors/analysis_engine/primitive/MedKATSentenceDetector.xml
+	./descriptors/analysis_engine/primitive/MedKATParser.xml
+	
+The descriptor for aggregate annotator ./descriptors/analysis_engine/aggregate/MedKATNLP_RunSP.xml includes:
+	- POS tagger
+	- POS tagger adaptor
+	- Parser
+	 
+Also type system descriptors contain definitions of types created by these annotators
+	./descriptors/type_system/NLPTypes.xm - types for token and sentence annotations;
+	./descriptors/type_system/SPTypes.xml - types for phrasal annotation produced by the parser
+		
+DEPENDANCIES
+------------
+MedKAT_NLP requires:
+	MedKAT_NLPBase project.
+	Apache UIMA 2.2 or later. See http://incubator.apache.org/uima/ for more information about UIMA.
+	 OpenNLP library (see http://opennlp.sourceforge.net) including OpenNLP tools and models for English. MedKAT_NLP'a annotators are dependant on the following OpenNLP libraries.
+	 	- trove.jar
+	 	- maxent-2.5.2.jar
+	 	- opennlp-tools-1.4.3.jar
+	 Please note, that opennlp-tools-1.4.3.jar must be built according to the instructions provided by OpenNLP Tools documentation.
+	 MedKAT_NLP annotators use OpenNLP models designed to work with the 1.4 version of OpenNLP Tools. The model files are available for download from OpenNLP website and should be placed into the following directory hierarchy:
+	 	./OpenNLP/models/english/chunker/EnglishChunk.bin.gz
+		./OpenNLP/models/english/parser/build.bin.gz
+		./OpenNLP/models/english/parser/check.bin.gz
+		./OpenNLP/models/english/parser/chunk.bin.gz
+		./OpenNLP/models/english/parser/head_rules
+		./OpenNLP/models/english/parser/tag.bin.gz
+		./OpenNLP/models/english/parser/tagdict
+		./OpenNLP/models/english/postag/tag.bin.gz
+		./OpenNLP/models/english/postag/tagdict
+		./OpenNLP/models/english/sentdetect/EnglishSD.bin.gz
+		./OpenNLP/models/english/tokenize/EnglishTok.bin.gz
+	 	
+	 Note: OpenNLP sub-directory should be put in the same directory as MedKAT_NLP

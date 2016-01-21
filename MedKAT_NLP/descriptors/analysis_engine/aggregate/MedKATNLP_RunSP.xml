@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="MedKATPOSTagger">
+      <import location="../primitive/MedKATPOSTagger.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="MedKATParser">
+      <import location="../primitive/MedKATParser.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="POSAdapterAnnotator">
+      <import location="../../../../MedKAT_NLPBase/descriptors/POSAdapterAnnotator.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>MedKAT_RunSP</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters searchStrategy="language_fallback">
+      <configurationParameter>
+        <name>POSAdapterClassNames</name>
+        <description>Class name for POS adapters</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+        <overrides>
+          <parameter>POSAdapterAnnotator/POSAdapterClassNames</parameter>
+        </overrides>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>POSAdapterClassNames</name>
+        <value>
+          <array>
+            <string>org.ohnlp.medkat.opennlp.POSAdapter.MedKATLeftRightPOSAdapter</string>
+            <string>org.ohnlp.medkat.opennlp.POSAdapter.MedKATLymphNodesPOSAdapter</string>
+          </array>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <flowConstraints>
+      <fixedFlow>
+        <node>MedKATPOSTagger</node>
+        <node>POSAdapterAnnotator</node>
+        <node>MedKATParser</node>
+      </fixedFlow>
+    </flowConstraints>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

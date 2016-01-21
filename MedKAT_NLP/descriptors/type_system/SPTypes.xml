@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>Shallow parser types</name>
+  <description>Types prodiuced by shallow parser</description>
+  <version/>
+  <vendor/>
+  <types>
+    <typeDescription>
+      <name>uima.tt.ClauseAnnotation</name>
+      <description>Clause Annotation</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.TCAnnotation</name>
+      <description>Subordinate Clause Annotation</description>
+      <supertypeName>uima.tt.ClauseAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.PhraseAnnotation</name>
+      <description>Phrase Annotation</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.AdjPAnnotation</name>
+      <description>Adjectival Phrase</description>
+      <supertypeName>uima.tt.PhraseAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.NPAnnotation</name>
+      <description>Noun Phrase</description>
+      <supertypeName>uima.tt.PhraseAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.NPListAnnotation</name>
+      <description>Noun Phrase List</description>
+      <supertypeName>uima.tt.PhraseAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.NPPAnnotation</name>
+      <description>Prepositional Noun Phrase</description>
+      <supertypeName>uima.tt.PhraseAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.NPSAnnotation</name>
+      <description>Possessive Noun Phrase</description>
+      <supertypeName>uima.tt.PhraseAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.PPAnnotation</name>
+      <description>Prepositional Phrase</description>
+      <supertypeName>uima.tt.PhraseAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>uima.tt.VGAnnotation</name>
+      <description>Verb Group</description>
+      <supertypeName>uima.tt.PhraseAnnotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
