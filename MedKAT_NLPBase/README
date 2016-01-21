@@ -1,0 +1,13 @@
+INTRODUCTION
+------------
+MedKAT_NLPBase is a collection of generic UIMA utilities as well as base functionality for NLP post processing that might be  required depending on the accuracy of executed NLP annotators. The adapter classes defined in this project can be overloaded to allow customization of post processing of results of a particular NLP annotator. 
+
+
+ORGANIZATION
+------------
+The MedKAT_NLPBase distribution contains src and descriptors directories.
+
+
+DEPENDANCIES
+------------
+MedKAT_NLPBase requires Apache UIMA 2.2 or later. See http://incubator.apache.org/uima/ for more information about UIMA.

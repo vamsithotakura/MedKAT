@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>org.ohnlp.medkat.POSTaggerAdaptorBase.POSAdapterAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>POSAdapterAnnotator</name>
+    <description>Changes preannotated POS feature values according to an application specific rules</description>
+    <version>1.0</version>
+    <vendor>IBM</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>POSAdapterClassNames</name>
+        <description>Class name for POS adapters</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings/>
+    <typeSystemDescription/>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
